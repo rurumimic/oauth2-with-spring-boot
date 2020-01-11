@@ -19,4 +19,29 @@
 
 ## Start
 
+### LiveReload
+
+1. IntelliJ:
+    1. Preferences:
+        - Compiler: Build project automatically
+    2. Registry: Cmd + Shift + A
+        - compiler.automake.allow.when.app.running: check
+1. Chrome: LiveReload
+
+### Security Login Disable
+
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
+}
+```
 
